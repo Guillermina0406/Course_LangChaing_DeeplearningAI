@@ -21,23 +21,4 @@ El objetivo principal es demostrar cómo gestionar y estructurar las interaccion
 | **`get_completion()`** | Una función simple para realizar llamadas directas a la API de OpenAI (sin LangChain). |
 | **`ChatPromptTemplate`** | Clase clave de LangChain para definir mensajes y variables en el prompt. |
 | **`StructuredOutputParser`** | Clase esencial para definir un esquema de salida (JSON) y convertir la respuesta de texto del LLM en un objeto de Python usable (`dict`). |
-
-## 🚀 Cómo Empezar
-
-1.  **Clonar el repositorio** (si aplica) o descargar el archivo `L1-Model_prompt_parser.ipynb`.
-2.  **Configurar el Entorno:**
-    ```bash
-    pip install python-dotenv openai langchain jupyter
-    ```
-3.  **Configurar la Clave de API:** Crea un archivo `.env` en la raíz del proyecto y añade tu clave de OpenAI:
-    ```
-    OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    ```
-4.  **Ejecutar el Cuaderno:** Abre el cuaderno con Jupyter y ejecuta las celdas secuencialmente para ver los conceptos en acción.
-    ```bash
-    jupyter notebook
-    ```
-
----
-
-*Este proyecto es ideal para principiantes que buscan entender la transición de las llamadas directas a la API a un enfoque más estructurado con LangChain.*
+--
