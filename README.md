@@ -51,3 +51,24 @@ El módulo de Cadenas cubre la automatización de flujos de trabajo al permitir 
 | **`LLMChain`** | La cadena más básica. Combina un LLM con una plantilla de prompt para una **tarea única**. | Directo. |
 | **`SequentialChain`** | Permite **flujos de trabajo complejos** donde se combinan subcadenas con múltiples entradas y salidas. | Secuencial (Múltiples entradas/salidas). |
 | **`RouterChain`** | Utiliza un **Agente LLM** para analizar la entrada y **decidir a qué subcadena especializada** debe enrutar la petición. | **Decisión Inteligente.** (Ej., enrutar preguntas de Física a la cadena de Física). |
+
+## 4. 📚 Módulo de QA sobre Documentos (RAG) (L4)
+
+Este módulo es fundamental para construir sistemas de **Preguntas y Respuestas sobre datos propios** (RAG: *Retrieval-Augmented Generation*), superando el límite de contexto de los LLMs.
+
+* **Embeddings:** Se introducen las **representaciones numéricas** (vectores) de texto que capturan el significado semántico.
+* **Vector Stores:** Se utiliza la base de datos vectorial (`DocArrayInMemorySearch`) para **indexar** y **almacenar** los *embeddings* de los documentos.
+* **Recuperación:** La cadena **`RetrievalQA`** combina el LLM con el **Recuperador** (`Retriever`) para buscar los fragmentos de documentos más relevantes a la consulta y solo pasar ese contexto al modelo.
+* **Tipos de Cadena QA:** Se exploran estrategias para manejar grandes volúmenes de documentos, como **`stuff`**, **`map_reduce`**, y **`refine`**.
+
+---
+
+## 5. 🔬 Módulo de Evaluación (L5)
+
+Este módulo se enfoca en la calidad y el mantenimiento de las aplicaciones de LLM.
+
+* **Debugging (Depuración):** Se utiliza la opción **`verbose=True`** en las cadenas para inspeccionar el flujo de ejecución (el *prompt* enviado y los documentos recuperados) y diagnosticar problemas (ej. la recuperación falló o la generación fue incorrecta).
+* **Generación de Ejemplos:** Se muestra cómo utilizar un LLM para crear automáticamente conjuntos de datos de evaluación (pares de **pregunta**, **respuesta ideal** y **contexto**).
+* **Evaluación Asistida por LLM:** Se usa un **segundo LLM como juez** para calificar automáticamente la respuesta generada por la cadena de prueba contra la respuesta ideal, midiendo la **Corrección** y la **Fidelidad**.
+
+---
